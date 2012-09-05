@@ -19,9 +19,18 @@
             $(this).css( 'background-color', settings.bad );
           },
           function() {
-            $(this).css( 'background-color', '#ffffff' );          
+            $(this).css( 'background-color', '#ffffff' );
           }
       );
+	  $(this).click(
+		function() {
+		var pixelDisplacement = Math.floor(Math.random()*10) * 100;
+		$(this).css( 'background-color', settings.bad );
+		$(this).animate({"left":"+=1700px"}, "slow", function() {
+			$(this).remove();
+		});		
+		console.log();
+	  });
     });
 
   };
